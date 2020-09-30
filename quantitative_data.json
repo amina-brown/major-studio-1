@@ -1,0 +1,129 @@
+{
+    "children": [
+        {
+            "name": "On View",
+            "children": [
+                {
+                    "name": "HAC",
+                    "fullname":"Smithsonian Gardens",
+                    "group": "A",
+                    "value": 32,
+                    "colname": "level3"
+                },
+                {
+                    "name": "NASM",
+                    "fullname": "National Air and Space Museum",
+                    "group": "A",
+                    "value": 154,
+                    "colname": "level3"
+                },
+                {
+                    "name": "NMAAHC",
+                    "fullname": "National Museum of African American History and Culture",
+                    "group": "A",
+                    "value": 751,
+                    "colname": "level3"
+                },
+                {
+                    "name": "NMAfA",
+                    "fullname": "Smithsonian National Museum of African Art",
+                    "group": "A",
+                    "value": 47,
+                    "colname": "level3"
+                },
+                {
+                    "name": "NMAI",
+                    "fullname": "National Museum of the American Indian",
+                    "group": "A",
+                    "value": 1840,
+                    "colname": "level3"
+                },
+                {
+                    "name": "NPG",
+                    "fullname": "National Portrait Gallery",
+                    "group": "A",
+                    "value": 203,
+                    "colname": "level3"
+                },
+                {
+                    "name": "NPM",
+                    "fullname": "National Postal Museum",
+                    "group": "A",
+                    "value": 159,
+                    "colname": "level3"
+                },
+                {
+                    "name": "SAAM",
+                    "fullname": "Smithsonian American Art Museum",
+                    "group": "A",
+                    "value": 964,
+                    "colname": "level3"
+                }
+            ],
+            "colname": "level2"
+        },
+        {
+            "name": "In Storage",
+            "children": [
+                {
+                    "name": "HAC",
+                    "fullname":"Smithsonian Gardens",
+                    "group": "A",
+                    "value": 397,
+                    "colname": "level3"
+                },
+                {
+                    "name": "NASM",
+                    "fullname": "National Air and Space Museum",
+                    "group": "A",
+                    "value": 591,
+                    "colname": "level3"
+                },
+                {
+                    "name": "NMAAHC",
+                    "fullname": "National Museum of African American History and Culture",
+                    "group": "A",
+                    "value": 1642,
+                    "colname": "level3"
+                },
+                {
+                    "name": "NMAfA",
+                    "fullname": "Smithsonian National Museum of African Art",
+                    "group": "A",
+                    "value": 89,
+                    "colname": "level3"
+                },
+                {
+                    "name": "NMAI",
+                    "fullname": "National Museum of the American Indian",
+                    "group": "A",
+                    "value": 13021,
+                    "colname": "level3"
+                },
+                {
+                    "name": "NPG",
+                    "fullname": "National Portrait Gallery",
+                    "group": "A",
+                    "value": 10574,
+                    "colname": "level3"
+                },
+                {
+                    "name": "NPM",
+                    "fullname": "National Postal Museum",
+                    "group": "A",
+                    "value": 2389,
+                    "colname": "level3"
+                },
+                {
+                    "name": "SAAM",
+                    "fullname": "Smithsonian American Art Museum",
+                    "group": "A",
+                    "value": 11578,
+                    "colname": "level3"
+                }
+            ],
+            "colname": "level2"
+        }
+    ],
+    "name": "Smithsonian"
+}

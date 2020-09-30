@@ -1,0 +1,52 @@
+body {
+    background-color: #333f48;
+}
+
+header {
+    font-size: 50px;
+    color: white;
+    font-family: Acumin Pro Light;
+    margin-left: 40px;
+    width: 545px;
+    float: left;
+    margin-top: 48px;
+}
+
+p {
+    font-size: 15px;
+    color: white;
+    font-family: Acumin Pro Light;
+    float: left;
+    width: 700px;
+    text-align: justify;
+    margin-top: 15px;
+}
+
+#logo {
+    fill: white;
+}
+
+#logo-div{
+    float: left;
+    width: 150px;
+    margin-left: 20px;
+}
+
+rect {
+    border-radius: 100px;
+}
+
+.toolTip {
+    position: absolute;
+    display: none;
+    width: auto;
+    height: auto;
+    /* background: none repeat scroll 0 0 white; */
+    border: 0 none;
+    border-radius: 8px 8px 8px 8px;
+    /* box-shadow: -3px 3px 15px #888888; */
+    color: white;
+    font: 20px Acumin Pro Light;
+    padding: 5px;
+    text-align: center;
+}
