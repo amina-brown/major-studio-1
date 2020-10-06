@@ -36,7 +36,7 @@ d3.json("quantitative_data.json", function(data) {
 
   var color_storage = d3.scaleOrdinal()
     .domain(["HAC","HMSG","NASM","NMAAHC","NMAfA","NMAH","NMAI","NPG","NPM","SAAM"])
-    .range(["#626F78","#7D8A94","#99A7B0","#B6C4CE","#D4E2ED","#626F78","#7D8A94","#99A7B0","#B6C4CE","#D4E2ED"])
+    .range(["#626F78","#7D8A94","#99A7B0","#B6C4CE","#7D8A94","#626F78","#7D8A94","#D4E2ED","#B6C4CE","#99A7B0"])
 
 
   // use this information to add rectangles:
@@ -68,7 +68,7 @@ d3.json("quantitative_data.json", function(data) {
   
     var text_storage = d3.scaleOrdinal()
       .domain(["HAC","NASM","NMAAHC","NMAfA","NMAI","NPG","NPM","SAAM"])
-      .range(["white","white","#333f48","#333f48","white","white","#333f48","#333f48"])
+      .range(["white","white","#333f48","white","white","#333f48","#333f48","white"])
 
   // and to add the text labels
     svg
