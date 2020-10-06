@@ -36,7 +36,7 @@ d3.json("quantitative_data.json", function(data) {
 
   var color_storage = d3.scaleOrdinal()
     .domain(["HAC","HMSG","NASM","NMAAHC","NMAfA","NMAH","NMAI","NPG","NPM","SAAM"])
-    .range(["#626F78","#3A464F","#D6E5EF","#B5C3CD","#ADBBC5","#626F78","#3A464F","#D6E5EF","#B5C3CD","#ADBBC5"])
+    .range(["#626F78","#7D8A94","#99A7B0","#B6C4CE","#D4E2ED","#626F78","#7D8A94","#99A7B0","#B6C4CE","#D4E2ED"])
 
 
   // use this information to add rectangles:
