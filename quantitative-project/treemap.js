@@ -68,7 +68,7 @@ d3.json("quantitative_data.json", function(data) {
   
     var text_storage = d3.scaleOrdinal()
       .domain(["HAC","NASM","NMAAHC","NMAfA","NMAI","NPG","NPM","SAAM"])
-      .range(["white","#333f48","white","white","white","#333f48","white","#333f48"])
+      .range(["white","white","#333f48","#333f48","white","white","#333f48","#333f48"])
 
   // and to add the text labels
     svg
