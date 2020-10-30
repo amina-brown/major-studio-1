@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Acumin Pro Light";
+    src: url("Acumin-RPro.otf") format("truetype");
+  }
+
 body {
     background-color: #333f48;
 }
