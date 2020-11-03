@@ -1,0 +1,81 @@
+body {
+    background-image: url('background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position-x: center;
+}
+
+header {
+    color: black;
+    font-family: Bahnschrift;
+    margin-left: 5%;
+    width: 48%;
+    float: left;
+    margin-top: 15px;
+}
+
+h1{
+    font-size: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+h2{
+    font-size: 25px;
+    margin-top: 0px;
+    margin-bottom: 10%;
+}
+
+p {
+    font-size: 15px;
+    color: black;
+    font-family: Bahnschrift;
+    float: left;
+    width: 40%;
+    text-align: justify;
+    margin-top: 15px;
+    margin-left: 5%;
+}
+
+#my_dataviz {
+    height: 60%;
+    width: 100%;
+}
+
+rect {
+    opacity: 0.85;
+}
+
+text{
+    font-size: 12px;
+    font-family: Bahnschrift;
+    overflow-wrap: break-word;
+}
+
+
+#hover1 {
+    background: lightgrey; 
+    opacity: 0.95;
+    font-size: 16px;
+    font-family: Bahnschrift;
+    flex: 1;
+    margin-left: 15%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#hover2 {
+    background: lightgrey;
+    opacity: 0.95;
+    font-size: 16px;
+    font-family: Bahnschrift;
+    flex: 2.5;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 3px;
+}
+
+.flex-container {
+    display: flex;
+}
