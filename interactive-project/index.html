@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <!-- <header>Invisible Artifacts</header> -->
+    <main>
+        
+    </main>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <!-- <script src="quantitative_data.js"></script> -->
+    <!-- Create a div where the graph will take place -->
+<div id="my_dataviz">
+    <!-- <img src="cloud1.svg"> -->
+<svg>
+<defs>
+    <linearGradient id="grad-cloud" x1="0%" y1="0%" x2="100%" y2="30%">
+        <stop offset="50%" style="stop-color:#fffeff" />
+        <stop offset="100%" style="stop-color:#fffeff;stop-opacity:.6" />
+      </linearGradient>
+      <linearGradient id="grad-bubble" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="10%" style="stop-color:#268EC4;stop-opacity:.1" />
+        <stop offset="100%" style="stop-color:#268EC4;stop-opacity:.3" />
+      </linearGradient>
+</defs>
+  <rect id="top"></rect>
+  <rect id="bottom"></rect>
+  <path class='cloud' id='title-cloud' transform="scale(3.2) translate(-735,-350)" d='M749.77,397.52a2.26,2.26,0,0,0,2.23,2l101.36.52a2.93,2.93,0,0,0,2.89-2.4l.44-2.4a5.49,5.49,0,0,0-.13-2.58h0L855.8,390a9.36,9.36,0,0,0-1.15-2.46l-2-3a12.19,12.19,0,0,0-2.29-2.57l-2-1.71a12.42,12.42,0,0,0-2.49-1.63L842.45,377a10.46,10.46,0,0,0-2.58-.87L834.21,375l-1.08-3a3.53,3.53,0,0,0-.69-1.15l-1.63-1.81a16.78,16.78,0,0,0-5-3.81l-1.89-1a6.09,6.09,0,0,0-1.72-.56l-5.54-.92-4.2-3a3.92,3.92,0,0,0-1-.48l-2.58-.88a32.14,32.14,0,0,0-6-1.42l-3.19-.43a17.09,17.09,0,0,0-2.14-.14H793.1a17.63,17.63,0,0,0-3.17.28l-3.66.65a8.54,8.54,0,0,0-2.42.82l-1.81.95a12.09,12.09,0,0,0-4.24,3.7l-1.26,1.77a15.29,15.29,0,0,0-2.37,5l-1.36,5.05-.31.77-3.22.26a6.35,6.35,0,0,0-1.06.18l-1.72.45a17.54,17.54,0,0,0-4.46,1.83L759,380a14.3,14.3,0,0,0-3.39,2.76L754,384.55a15.65,15.65,0,0,0-2.4,3.52l-1,2c-.2.41-.38.83-.55,1.25a8.35,8.35,0,0,0-.49,3.93Z'></path>
+  <text id='title' x=220 y=145>Invisible Artifacts</text>
+  <path class='cloud' id='small-cloud' transform="translate(250,-340)" d='M749.77,397.52a2.26,2.26,0,0,0,2.23,2l101.36.52a2.93,2.93,0,0,0,2.89-2.4l.44-2.4a5.49,5.49,0,0,0-.13-2.58h0L855.8,390a9.36,9.36,0,0,0-1.15-2.46l-2-3a12.19,12.19,0,0,0-2.29-2.57l-2-1.71a12.42,12.42,0,0,0-2.49-1.63L842.45,377a10.46,10.46,0,0,0-2.58-.87L834.21,375l-1.08-3a3.53,3.53,0,0,0-.69-1.15l-1.63-1.81a16.78,16.78,0,0,0-5-3.81l-1.89-1a6.09,6.09,0,0,0-1.72-.56l-5.54-.92-4.2-3a3.92,3.92,0,0,0-1-.48l-2.58-.88a32.14,32.14,0,0,0-6-1.42l-3.19-.43a17.09,17.09,0,0,0-2.14-.14H793.1a17.63,17.63,0,0,0-3.17.28l-3.66.65a8.54,8.54,0,0,0-2.42.82l-1.81.95a12.09,12.09,0,0,0-4.24,3.7l-1.26,1.77a15.29,15.29,0,0,0-2.37,5l-1.36,5.05-.31.77-3.22.26a6.35,6.35,0,0,0-1.06.18l-1.72.45a17.54,17.54,0,0,0-4.46,1.83L759,380a14.3,14.3,0,0,0-3.39,2.76L754,384.55a15.65,15.65,0,0,0-2.4,3.52l-1,2c-.2.41-.38.83-.55,1.25a8.35,8.35,0,0,0-.49,3.93Z'></path>
+  <path class='cloud' id='hover-cloud' transform="scale(1.75) translate(10,-310)" d='M690.84,371c-17.51,0-32.11,13.11-35.65,30.63a6.57,6.57,0,0,0,6.67,8.23H807.42a6.58,6.58,0,0,0,6.58-6.58h0c0-16.85-16.85-30.49-37.66-30.49l.65,6.82c0-21.48-18.45-38.86-41.25-38.86l.44,0c-25.72,0-46.53,17.38-46.53,38.86'></path>
+  <text class='label' id="line3" x=1300 y=95></text>
+  <text class='label' id="line2" x=1300 y=115></text>
+  <text class='label' id="line1" x=1300 y=135>Smithsonian</text>
+  <text id='value' x=1300 y=165>9% on view</text>
+  <path class='cloud' id='small-hover-cloud' transform="scale(.75) translate(100,-250)" d='M690.84,371c-17.51,0-32.11,13.11-35.65,30.63a6.57,6.57,0,0,0,6.67,8.23H807.42a6.58,6.58,0,0,0,6.58-6.58h0c0-16.85-16.85-30.49-37.66-30.49l.65,6.82c0-21.48-18.45-38.86-41.25-38.86l.44,0c-25.72,0-46.53,17.38-46.53,38.86'></path>
+  <g transform="translate(1250,550)">
+    <circle r='100px'></circle>
+    <path class='bubble' transform="translate(-120,-120)" d='M75.27,43.66,85.06,63,71.31,68.61A50.69,50.69,0,0,0,55.66,78.72L36.14,97.23,46.51,72.64A44.41,44.41,0,0,1,61.05,54.17Z'></path>
+    <text font-size="20" stroke="none"> 
+        <tspan x=".1em" y="-1.7em">10 of the 32</tspan>
+        <tspan x=".1em" y="-.4em">institutions publicly</tspan>
+        <tspan x=".1em" y=".9em">share the visibility</tspan>
+        <tspan x=".1em" y="2.2em">status of</tspan>
+        <tspan x=".1em" y="3.5em">their artifacts</tspan>
+     </text>
+  </g>
+  <g transform="scale(.75) translate(1450,550)">
+    <circle r='100px'></circle>
+    <path class='bubble' transform="translate(-120,-120)" d='M75.27,43.66,85.06,63,71.31,68.61A50.69,50.69,0,0,0,55.66,78.72L36.14,97.23,46.51,72.64A44.41,44.41,0,0,1,61.05,54.17Z'></path>
+    <text font-size="25" stroke="none"> 
+       <tspan x=".2em" y="-.9em">Each pinnacle</tspan>
+       <tspan x=".2em" y=".4em">corresponds to</tspan>
+       <tspan x=".2em" y="1.7em">one institution</tspan>
+    </text>
+  </g>
+  <g transform="scale(.65) translate(1580,930)">
+    <circle r='100px'></circle>
+    <path class='bubble' transform="translate(-120,-120)" d='M75.27,43.66,85.06,63,71.31,68.61A50.69,50.69,0,0,0,55.66,78.72L36.14,97.23,46.51,72.64A44.41,44.41,0,0,1,61.05,54.17Z'></path>
+    <text font-size="25" stroke="none"> 
+        <tspan x=".2em" y="-1.1em">The above</tspan>
+        <tspan x=".2em" y=".1em">institutions have</tspan>
+        <tspan x=".2em" y="1.3em">between 2% and</tspan>
+        <tspan x=".2em" y="2.5em">53% on view</tspan>
+     </text>
+  </g>
+    <text font-size="15"> 
+        <tspan x="21.5em" y="25em">Museums are known for cataloging, preserving, and storing</tspan>
+        <tspan x="21.5em" y="26.5em">historical artifacts found across the world. As time progresses,</tspan>
+        <tspan x="21.5em" y="28em">the collections continue to grow and these museums boast</tspan>
+        <tspan x="21.5em" y="29.5em">about the thousands and millions of artifacts stored in their</tspan>
+        <tspan x="21.5em" y="31em">collections. This means that when visiting museums, viewers</tspan>
+        <tspan x="21.5em" y="32.5em">are only seeing the tip of the iceberg, while the vast majority of</tspan>
+        <tspan x="21.5em" y="34em">the collections are stored out of sight and therefore, potentially</tspan>
+        <tspan x="21.5em" y="35.5em">out of mind. Use the graphic to explore the status of 8 of the</tspan>
+        <tspan x="21.5em" y="37em">Smithsonian’s collections.</tspan>
+     </text>
+</svg>
+</div>
+    
+<!-- <script src="quantitative_data.js"></script> -->
+<script src="iceberg.js"></script>
+</body>
+</html>
+

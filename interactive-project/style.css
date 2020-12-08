@@ -1,0 +1,67 @@
+/* @font-face {
+    font-family: "Acumin Pro Light";
+    src: url("Acumin-RPro.otf") format("truetype");
+  } */
+  
+#my_dataviz {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+}
+
+svg {
+     width: 100%;
+     height: 100%;
+     min-height: 100vh;
+}
+
+text {
+    fill: #3E4756;
+    font-family: Ink Free;
+    text-anchor: middle;
+    /* margin-left: 40px;
+    width: 545px;
+    float: left;
+    margin-top: 48px; */
+} 
+
+#title {
+    font-size: 40px;
+}
+
+#value {
+    font-size: 30px;
+}
+
+.label {
+    font-size: 20px;
+}
+
+body {
+    margin: 0;
+}
+
+
+.cloud {
+    fill: url(#grad-cloud);
+}
+
+#top {
+    fill: #268EC4;
+    width: 100%;
+    /* height: 40%; */
+    /* min-height: 100vh */
+}
+
+#bottom {
+    fill: #268EC4;
+    opacity: 50%;
+    width: 100%;
+    /* height: 60%; */
+    min-height: 100vh
+}
+
+g {
+    fill: url(#grad-bubble);
+    /* stroke: #96ADCF; */
+}
