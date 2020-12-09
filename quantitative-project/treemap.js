@@ -60,7 +60,7 @@ d3.json("quantitative_data.json", function(data) {
         tool.style("display", "inline-block");
         tool.html(`${d.data.fullname} - ${d.parent.data.name}: ${d.data.value} artifacts`);
         d3.selectAll("."+d.data.name).style("stroke", function(d){ if (d.parent.data.name == "In Storage"){return color_exhibit(d.data.name)} else {return color_storage(d.data.name)}});
-        d3.selectAll("."+d.data.name).style("stroke-width","3px");
+        d3.selectAll("."+d.data.name).style("stroke-width","1px");
     }).on("mouseout", function (d) {
         tool.style("display", "none");
         d3.selectAll("."+d.data.name).style("stroke", "none");
@@ -92,7 +92,7 @@ d3.json("quantitative_data.json", function(data) {
         tool.style("display", "inline-block");
         tool.html(`${d.data.fullname} - ${d.parent.data.name}: ${d.data.value} artifacts`);
         d3.selectAll("."+d.data.name).style("stroke", function(d){ if (d.parent.data.name == "In Storage"){return color_exhibit(d.data.name)} else {return color_storage(d.data.name)}});
-        d3.selectAll("."+d.data.name).style("stroke-width","3px");
+        d3.selectAll("."+d.data.name).style("stroke-width","1px");
     }).on("mouseout", function (d) {
         tool.style("display", "none");
         d3.selectAll("."+d.data.name).style("stroke", "none");
