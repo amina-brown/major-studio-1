@@ -29,6 +29,10 @@ text {
     font-size: 40px;
 }
 
+.status {
+    font-size: 12px;
+}
+
 #value {
     font-size: 30px;
 }

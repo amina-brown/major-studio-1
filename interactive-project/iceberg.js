@@ -38,11 +38,25 @@ d3.json("institution_data.json", function(data) {
     var base_width = 75;
     var start = 450;
     var k = 0;
+    var end = start+9*base_width;
+
+    svg.append("text")
+    .attr("y",surface+12)
+    .attr("x",end+30)
+    .attr("class","status")
+    .text("In Storage")
+
+    svg.append("text")
+    .attr("y",surface-3)
+    .attr("x",start-30)
+    .attr("class","status")
+    .text("On View")
+
     // var l = -1;
 
     var color_exhibit = d3.scaleOrdinal()
     .domain(["HAC","NASM","NMAAHC","NMAfA","NMAI","NPG","NPM","SAAM"])
-    .range(["#cee6ca", "#131a55","#56b9d2","#3f97c2","#3371aa","#91d0ce", "#274b93","#1b277c"])
+    .range(["#00B3FF", "#cee6ca","#56b9d2","#3f97c2","#3371aa","#00A1CC", "#00D0D4","#91d0ce"])
 
 
     var position = d3.scaleOrdinal()
@@ -77,16 +91,22 @@ d3.json("institution_data.json", function(data) {
 
     sorted = [...view].sort(compareValues('value'))
 
+    d3.selection.prototype.moveToFront = function() {
+        return this.each(function(){
+          this.parentNode.appendChild(this);
+        });
+      };
+
     view.forEach(function(d){
-        // l++;
+        k++;
         // var sorted = view_values.sort()
         // console.log(sorted)
         var i = position(sorted.findIndex(x => x.name === d.name));
         var base = start+i*base_width;
         if (i < 5){
-            var center = base+Math.log(d.value)*2
+            var center = base+Math.log(d.value)*(6-i)
         } else if (i > 4){
-            var center = base-Math.log(d.value)*2
+            var center = base-Math.log(d.value)*(i-4)
         } else {
             var center = base
         }
@@ -100,12 +120,12 @@ d3.json("institution_data.json", function(data) {
         
         grad1.append("stop")
             .attr("offset","0%")
-            // .style("stop-color","#fffeff")
-            .style("stop-color",color_exhibit(d.name))
-            .style("stop-opacity","50%")
+            .style("stop-color","#fffeff")
+            // .style("stop-color",color_exhibit(d.name))
+            // .style("stop-opacity","50%")
 
         grad1.append("stop")
-            .attr("offset","50%")
+            .attr("offset","100%")
             .style("stop-color",color_exhibit(d.name))
 
         if (["HAC","NPG","NPM"].includes(d.name)){
@@ -137,17 +157,14 @@ d3.json("institution_data.json", function(data) {
         .attr("class",d.name)
         .attr("points",center+","+(surface-d.value/divisor)+" "+(base+base_width)+","+surface+" "+(base-base_width)+","+surface)
         .style("fill",`url(#${d.name}grad)`)
-        .style("position","relative")
-        .style("z-index",i)
         .on("mousemove", function (t) {
-            d3.selectAll("."+d.name).style("z-index",100);
+            d3.selectAll("."+d.name).moveToFront();
             d3.select("#line3").html(name_3)
             d3.select("#line2").html(name_2)
             d3.select("#line1").html(name_1)
             if (d.name == "NMAAHC"){d3.selectAll(".label").style("font-size","18px")} else {d3.selectAll(".label").style("font-size","20px")}
             d3.select("#value").html(`${pct(d.name)}% on view`)
         }).on("mouseout", function (t) {
-            d3.selectAll("."+d.name).style("z-index",i);
             d3.select("#line3").html("")
             d3.select("#line2").html("")
             d3.select("#line1").html("Smithsonian")
@@ -155,6 +172,31 @@ d3.json("institution_data.json", function(data) {
             d3.select("#value").html(`9% on view`)
         });
 
+        function getRandomArbitrary(min, max) {
+            return Math.random() * (max - min) + min;
+          }
+
+        function isOdd(num) { return num % 2;}
+
+        var scale = getRandomArbitrary(.05,.2)
+        var xval = getRandomArbitrary(100,550)
+        if (isOdd(Math.round(xval)) == 0){
+            var yval = getRandomArbitrary(330,345) 
+        } else {
+            var yval = getRandomArbitrary(570,585)
+        }
+
+        svg.append("g")
+        .attr("transform","scale("+scale+") translate("+(xval*(1/scale))+","+(yval*(1/scale))+")")
+        .attr("id","bubble"+k)
+        .append("circle")
+        .attr("r","100px")
+
+        svg.select("#bubble"+k)
+        .append("path")
+        .attr("d","M75.27,43.66,85.06,63,71.31,68.61A50.69,50.69,0,0,0,55.66,78.72L36.14,97.23,46.51,72.64A44.41,44.41,0,0,1,61.05,54.17Z")
+        .attr("transform","translate(-120,-120)")
+        .attr("class","bubble")
         // console.log(center);
         // console.log(base);
     });
@@ -164,9 +206,9 @@ d3.json("institution_data.json", function(data) {
         var j = position(sorted.findIndex(x => x.name === d.name));
         var base = start+j*base_width;
         if (j < 5){
-            var center = base+Math.log(d.value)*2
+            var center = base+Math.log(d.value)*(6-j)
         } else if (j > 4){
-            var center = base-Math.log(d.value)*2
+            var center = base-Math.log(d.value)*(j-4)
         } else {
             var center = base
         }
@@ -200,8 +242,6 @@ d3.json("institution_data.json", function(data) {
         .attr("class",d.name)
         .attr("points",center+","+(surface+d.value/divisor)+" "+(base+base_width)+","+surface+" "+(base-base_width)+","+surface)
         .style("fill",`url(#${d.name}grad)`)
-        .style("position","relative")
-        .style("z-index",j)
 
         svg
         .append("polygon")
@@ -209,17 +249,14 @@ d3.json("institution_data.json", function(data) {
         .attr("points",center+","+(surface+d.value/divisor)+" "+(base+base_width)+","+surface+" "+(base-base_width)+","+surface)
         .style("fill","#268EC4")
         .style("opacity","50%")
-        .style("position","relative")
-        .style("z-index",j)
         .on("mousemove", function (t) {
-            d3.selectAll("."+d.name).style("z-index",100);
+            d3.selectAll("."+d.name).moveToFront();
             d3.select("#line3").html(name_3)
             d3.select("#line2").html(name_2)
             d3.select("#line1").html(name_1)
             if (d.name == "NMAAHC"){d3.selectAll(".label").style("font-size","18px")} else {d3.selectAll(".label").style("font-size","20px")}
             d3.select("#value").html(`${100-pct(d.name)}% in storage`)
         }).on("mouseout", function (t) {
-            d3.selectAll("."+d.name).style("z-index",j);
             d3.select("#line3").html("")
             d3.select("#line2").html("")
             d3.select("#line1").html("Smithsonian")
