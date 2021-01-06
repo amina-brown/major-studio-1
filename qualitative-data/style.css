@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Bahnschrift';
+    src: url("bahnschrift.ttf") format("truetype"),
+        url("bahnschrift.ttf") format("woff"),
+        url("bahnschrift.ttf") format("woff2");
+  }
+
 body {
     background-image: url('background.png');
     background-repeat: no-repeat;
