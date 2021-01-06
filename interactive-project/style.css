@@ -1,7 +1,9 @@
-/* @font-face {
-    font-family: "Acumin Pro Light";
-    src: url("Acumin-RPro.otf") format("truetype");
-  } */
+@font-face {
+    font-family: 'Ink Free';
+    src: url("Inkfree.ttf") format("truetype"),
+        url("Inkfree.ttf") format("woff"),
+        url("Inkfree.ttf") format("woff2");
+  }
   
 #my_dataviz {
     width: 100%;
