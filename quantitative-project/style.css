@@ -1,6 +1,8 @@
 @font-face {
-    font-family: "Acumin Pro Light";
-    src: url("Acumin-RPro.otf") format("truetype");
+    font-family: 'Acumin Pro Light';
+    src: url("Acumin-RPro.otf") format("truetype"),
+        url("Acumin-RPro.otf") format("woff"),
+        url("Acumin-RPro.otf") format("woff2");
   }
 
 body {
