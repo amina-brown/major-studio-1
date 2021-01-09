@@ -28,7 +28,7 @@ d3.json("institution_data.json", function(data) {
     svg.select("#top").attr("height",`${ratio * 200}%`)
     svg.select("#top").attr("height",`204.17px`)
 
-    svg.select("bottom")
+    svg.select("#bottom")
     // svg.append("rect")
     // .attr("id","bottom")
     // .attr("y",`${ratio * 200}%`)
