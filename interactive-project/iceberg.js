@@ -33,6 +33,7 @@ d3.json("institution_data.json", function(data) {
     // .attr("id","bottom")
     // .attr("y",`${ratio * 200}%`)
     .attr("y",`204.17px`)
+    .attr("height",`550px`)
 
     // var surface = ratio*100;
     var surface = 204.17;
