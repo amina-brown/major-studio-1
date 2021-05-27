@@ -43,17 +43,18 @@ rect {
 }
 
 .toolTip {
-    position: absolute;
-    display: none;
+    position: relative;
+    display: inline-block;
     width: auto;
     height: auto;
     /* background: none repeat scroll 0 0 white; */
     border: 0 none;
     border-radius: 8px 8px 8px 8px;
     /* box-shadow: -3px 3px 15px #888888; */
-    color: white;
+    color: #ffffff00;
     font: 20px Acumin Pro Light;
-    padding: 1%;
+    padding: 1% 1% 0 1%;
+    margin: 0;
     text-align: center;
 }
 

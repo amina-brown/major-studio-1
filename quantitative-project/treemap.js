@@ -1,8 +1,10 @@
 
 // set the dimensions and margins of the graph
-var margin = {top: 40, right: 40, bottom: 10, left: 40},
+var margin = {top: 10, right: 40, bottom: 10, left: 40},
   width = 1500 - margin.left - margin.right,
   height = 540 - margin.top - margin.bottom;
+
+var tool = d3.select(".toolTip");
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
@@ -13,7 +15,7 @@ var svg = d3.select("#my_dataviz")
   .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
 
-var tool = d3.select("body").append("div").attr("class", "toolTip");
+// var tool = d3.select("body").append("div").attr("class", "toolTip");
 
 // read json data
 d3.json("quantitative_data.json", function(data) {
@@ -55,14 +57,16 @@ d3.json("quantitative_data.json", function(data) {
       .style("fill", function(d){ if (d.parent.data.name == "In Storage"){return color_storage(d.data.name)} else {return color_exhibit(d.data.name)}} )
       // .style("border-radius", "5px")
       .on("mousemove", function (d) {
-        tool.style("left", 50 + "px")
-        tool.style("top", 25 + "%")
-        tool.style("display", "inline-block");
+        // tool.style("left", 50 + "px")
+        // tool.style("top", 25 + "%")
+        // tool.style("display", "inline-block");
+        tool.style("color","#ffffff");
         tool.html(`${d.data.fullname} - ${d.parent.data.name}: ${d.data.value} artifacts`);
         d3.selectAll("."+d.data.name).style("stroke", function(d){ if (d.parent.data.name == "In Storage"){return color_exhibit(d.data.name)} else {return color_storage(d.data.name)}});
         d3.selectAll("."+d.data.name).style("stroke-width","3px");
     }).on("mouseout", function (d) {
-        tool.style("display", "none");
+        // tool.style("display", "none");
+        tool.style("color","#ffffff00");
         d3.selectAll("."+d.data.name).style("stroke", "none");
     });
 
@@ -87,14 +91,16 @@ d3.json("quantitative_data.json", function(data) {
       .style("fill", function(d){ if (d.parent.data.name == "In Storage"){return text_storage(d.data.name)} else {return text_exhibit(d.data.name)}} )
       .attr("font-family","Acumin Pro Light")
       .on("mousemove", function (d) {
-        tool.style("left", 50 + "px")
-        tool.style("top", 25 + "%")
-        tool.style("display", "inline-block");
+        // tool.style("left", 50 + "px")
+        // tool.style("top", 25 + "%")
+        // tool.style("display", "inline-block");
+        tool.style("color","#ffffff");
         tool.html(`${d.data.fullname} - ${d.parent.data.name}: ${d.data.value} artifacts`);
         d3.selectAll("."+d.data.name).style("stroke", function(d){ if (d.parent.data.name == "In Storage"){return color_exhibit(d.data.name)} else {return color_storage(d.data.name)}});
         d3.selectAll("."+d.data.name).style("stroke-width","3px");
     }).on("mouseout", function (d) {
-        tool.style("display", "none");
+      // tool.style("display", "none");
+      tool.style("color","#ffffff00");
         d3.selectAll("."+d.data.name).style("stroke", "none");
     });
  
