@@ -1,9 +1,8 @@
 @font-face {
-    font-family: 'Acumin Pro Light';
-    src: url("Acumin-RPro.otf") format("truetype"),
-        url("Acumin-RPro.otf") format("woff"),
-        url("Acumin-RPro.otf") format("woff2");
+    font-family: "Acumin Pro Light";
+    src: url("Acumin-RPro.otf") format("truetype");
   }
+  
 
 body {
     background-color: #333f48;
@@ -13,8 +12,8 @@ header {
     font-size: 50px;
     color: white;
     font-family: Acumin Pro Light;
-    margin-left: 40px;
-    width: 545px;
+    padding-left: 2%;
+    width: 30%;
     float: left;
     margin-top: 48px;
 }
@@ -24,7 +23,7 @@ p {
     color: white;
     font-family: Acumin Pro Light;
     float: left;
-    width: 700px;
+    width: 50%;
     text-align: justify;
     margin-top: 15px;
 }
@@ -54,6 +53,10 @@ rect {
     /* box-shadow: -3px 3px 15px #888888; */
     color: white;
     font: 20px Acumin Pro Light;
-    padding: 5px;
+    padding: 1%;
     text-align: center;
+}
+
+.NMAI:hover {
+	stroke: coral;
 }

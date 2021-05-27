@@ -1,6 +1,6 @@
 
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 40, bottom: 10, left: 40},
+var margin = {top: 40, right: 40, bottom: 10, left: 40},
   width = 1500 - margin.left - margin.right,
   height = 540 - margin.top - margin.bottom;
 
@@ -36,7 +36,7 @@ d3.json("quantitative_data.json", function(data) {
 
   var color_storage = d3.scaleOrdinal()
     .domain(["HAC","HMSG","NASM","NMAAHC","NMAfA","NMAH","NMAI","NPG","NPM","SAAM"])
-    .range(["#626F78","#7D8A94","#99A7B0","#B6C4CE","#7D8A94","#626F78","#7D8A94","#D4E2ED","#B6C4CE","#99A7B0"])
+    .range(["#626F78","#3A464F","#D6E5EF","#B5C3CD","#ADBBC5","#626F78","#3A464F","#D6E5EF","#B5C3CD","#ADBBC5"])
 
 
   // use this information to add rectangles:
@@ -44,7 +44,7 @@ d3.json("quantitative_data.json", function(data) {
     .selectAll("rect")
     .data(root.leaves())
     .enter()
-    .append("rect")  
+    .append("rect")
       .attr("class", (d) => d.data.name)
       .attr("rx", 6)
       .attr("ry", 6)
@@ -56,11 +56,11 @@ d3.json("quantitative_data.json", function(data) {
       // .style("border-radius", "5px")
       .on("mousemove", function (d) {
         tool.style("left", 50 + "px")
-        tool.style("top", 205 + "px")
+        tool.style("top", 25 + "%")
         tool.style("display", "inline-block");
         tool.html(`${d.data.fullname} - ${d.parent.data.name}: ${d.data.value} artifacts`);
         d3.selectAll("."+d.data.name).style("stroke", function(d){ if (d.parent.data.name == "In Storage"){return color_exhibit(d.data.name)} else {return color_storage(d.data.name)}});
-        d3.selectAll("."+d.data.name).style("stroke-width","1px");
+        d3.selectAll("."+d.data.name).style("stroke-width","3px");
     }).on("mouseout", function (d) {
         tool.style("display", "none");
         d3.selectAll("."+d.data.name).style("stroke", "none");
@@ -72,7 +72,7 @@ d3.json("quantitative_data.json", function(data) {
   
     var text_storage = d3.scaleOrdinal()
       .domain(["HAC","NASM","NMAAHC","NMAfA","NMAI","NPG","NPM","SAAM"])
-      .range(["white","white","#333f48","white","white","#333f48","#333f48","white"])
+      .range(["white","#333f48","white","white","white","#333f48","white","#333f48"])
 
   // and to add the text labels
     svg
@@ -88,11 +88,11 @@ d3.json("quantitative_data.json", function(data) {
       .attr("font-family","Acumin Pro Light")
       .on("mousemove", function (d) {
         tool.style("left", 50 + "px")
-        tool.style("top", 205 + "px")
+        tool.style("top", 25 + "%")
         tool.style("display", "inline-block");
         tool.html(`${d.data.fullname} - ${d.parent.data.name}: ${d.data.value} artifacts`);
         d3.selectAll("."+d.data.name).style("stroke", function(d){ if (d.parent.data.name == "In Storage"){return color_exhibit(d.data.name)} else {return color_storage(d.data.name)}});
-        d3.selectAll("."+d.data.name).style("stroke-width","1px");
+        d3.selectAll("."+d.data.name).style("stroke-width","3px");
     }).on("mouseout", function (d) {
         tool.style("display", "none");
         d3.selectAll("."+d.data.name).style("stroke", "none");
