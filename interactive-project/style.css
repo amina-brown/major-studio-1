@@ -1,9 +1,7 @@
-@font-face {
-    font-family: 'Ink Free';
-    src: url("Inkfree.ttf") format("truetype"),
-        url("Inkfree.ttf") format("woff"),
-        url("Inkfree.ttf") format("woff2");
-  }
+/* @font-face {
+    font-family: "Acumin Pro Light";
+    src: url("Acumin-RPro.otf") format("truetype");
+  } */
   
 #my_dataviz {
     width: 100%;
@@ -15,6 +13,8 @@ svg {
      width: 100%;
      height: 100%;
      min-height: 100vh;
+     margin: 0px;
+     padding: 0px;
 }
 
 text {

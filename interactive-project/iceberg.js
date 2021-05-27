@@ -1,5 +1,7 @@
 var svg = d3.select("svg")
 
+// svg.attr("width",window.innerWidth).attr("height",window.innerHeight)
+
 var grad = svg.select("defs")
 
 d3.json("institution_data.json", function(data) {
@@ -25,7 +27,7 @@ d3.json("institution_data.json", function(data) {
     .range(percents)
 
     // console.log(percents);
-    svg.select("#top").attr("height",`${ratio * 200}%`)
+    // svg.select("#top").attr("height",`${ratio*100}vh`)
     svg.select("#top").attr("height",`204.17px`)
 
     svg.select("#bottom")
@@ -33,7 +35,10 @@ d3.json("institution_data.json", function(data) {
     // .attr("id","bottom")
     // .attr("y",`${ratio * 200}%`)
     .attr("y",`204.17px`)
-    .attr("height",`550px`)
+    // .attr("height",`550px`)
+    .attr("height",`${window.innerHeight - 204.17}px`)
+    // .attr("y",`${ratio*100}vh`)
+    // .attr("height",`${(1-ratio)*100}vh`)
 
     // var surface = ratio*100;
     var surface = 204.17;
